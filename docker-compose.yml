@@ -2,10 +2,8 @@ volumes:
   db: {}
 
 services:
-  image: foundry-discord-dice-roller
-  build: .
-
   bot:
+    build: .
     environment:
       DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID}
       DISCORD_TOKEN: ${YOUR_DISCORD_TOKEN}

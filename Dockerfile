@@ -1,10 +1,12 @@
-FROM node:22-alpine
-
-COPY package.json,package-lock.json .
+FROM node:24-alpine
 
 WORKDIR /foundry-discord-dice
 
-RUN npm install --silent --progress=false --omit-dev=true
+COPY package*.json .
+
+RUN npm install --silent --progress=false
+
+COPY . .
 
 RUN npx prisma migrate deploy
 
