@@ -18,4 +18,3 @@ services:
       DATABASE_URL: ${DATABASE_URL}
     depends_on:
       - db
-      - migration
