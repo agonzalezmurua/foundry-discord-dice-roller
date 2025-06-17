@@ -1,0 +1,14 @@
+volumes:
+  db: {}
+
+services:
+  image: foundry-discord-dice-roller
+  build: .
+
+  bot:
+    environment:
+      DISCORD_CLIENT_ID: YOUR_DISCORD_BOT_ID
+      DISCORD_TOKEN: YOUR_DISCORD_TOKEN
+      DATABASE_URL: file:/data/roller.db
+    volumes:
+      - db:/data
