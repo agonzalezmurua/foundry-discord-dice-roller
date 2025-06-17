@@ -1,0 +1,6 @@
+{
+  "discord": {
+    "token": "${DISCORD_TOKEN}",
+    "client_id": "${DISCORD_CLIENT_ID}"
+  }
+}

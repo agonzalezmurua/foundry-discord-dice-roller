@@ -1,0 +1,18 @@
+datasource db {
+    url      = env("DATABASE_URL")
+    provider = "sqlite"
+}
+
+generator client {
+    provider = "prisma-client-js"
+    output   = "lib/prisma_generated"
+}
+
+model Actor {
+    id         Int    @id @default(autoincrement())
+    name       String @unique
+    level      Int    @default(1)
+    avatar_url String
+    abilities  Json
+    skills     Json
+}
