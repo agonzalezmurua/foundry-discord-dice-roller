@@ -10,7 +10,7 @@ services:
       - 5432:5432
 
   roller:
-    image: foundry-discord-dice-roller
+    image: eldisgustin/foundryvtt-discord-dice-roller
     restart: always
     environment:
       DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID}
