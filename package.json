@@ -8,8 +8,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node main.ts",
-    "prepublish": "docker build -t eldisgustin/foundryvtt-discord-dice-roller .",
-    "publish": "docker push eldisgutin/foundryvtt-discord-dice-roller",
+    "docker:prepublish": "docker build -t eldisgustin/foundryvtt-discord-dice-roller .",
+    "docker:publish": "docker push eldisgutin/foundryvtt-discord-dice-roller",
+    "db:deploy": "npx prisma migrate deploy && npx prisma generate",
     "test": "vitest"
   },
   "dependencies": {

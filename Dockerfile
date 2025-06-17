@@ -1,11 +1,11 @@
-FROM node:24-alpine
+FROM node:24-alpine3.22
 
-WORKDIR /foundry-discord-dice-roller
+WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
-RUN npm install --silent --progress=false --omit-dev
+RUN npm ci --silent
 
 COPY . .
 
-CMD ["npm", "start"]
+CMD ["sh", "-c", "npm run db:deploy && npm run start"]
